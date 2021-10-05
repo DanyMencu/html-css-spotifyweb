@@ -43,6 +43,7 @@ main {
 /* ASIDE NAV */
 aside {
     width: 15%;
+    z-index: 1;
     padding: 10px 15px 10px 0;
     background: rgb(0, 0, 0);
     color: rgb(108, 108, 108);
@@ -119,9 +120,43 @@ aside {
 .principal-sct {
     width: 85%;
     height: 90vh;
-    background:rgba(30, 113, 180, 0.61);
+    background:rgb(11, 14, 26);
     border-top: 1px solid black;
     overflow: overlay;
+}
+
+.upgrade-banner {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 15px 3px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: right;
+}
+
+.upgrade-btn {
+    text-decoration: none;
+    padding: 5px 20px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+}
+
+.type-select {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6%;
+}
+
+.type-select .type {
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: rgb(108, 108, 108);
+}
+
+.type-select .type:hover {
+    color: #fff;
 }
 
 /* FOOTER */
