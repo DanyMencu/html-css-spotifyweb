@@ -37,6 +37,10 @@ body {
     border-radius: 50%;
 }
 
+.big-icon { 
+    font-size:24px;
+}
+
 .py-10px {
     padding: 10px 0;
 }
@@ -47,6 +51,10 @@ body {
 
 .pl-10px {
     padding-left: 10px;
+}
+
+.mb-5px { 
+    margin-bottom: 5px;
 }
 
 .mb-10px { 
@@ -130,20 +138,26 @@ aside {
     cursor: pointer;
 }
 
+.aside-content .app-installer:hover {
+    text-decoration: underline;
+}
+
 .aside-footer {
     margin: 0 10px;
 }
 
-.aside-content .profile {
-    height: 28px;
+.aside-footer .profile {
+    height: 35px;
     font-size: 14px;
     font-weight: 700;
     border-top: 1px solid rgb(108, 108, 108);
     cursor: pointer;
 }
 
-.aside-content .profile img {
+.aside-footer .profile img {
     height: 100%;
+    margin-right: 5px;
+    vertical-align: middle;
     background-color: #333;
     border-radius: 50%;
 }
@@ -157,6 +171,8 @@ aside {
     background:rgb(11, 14, 26);
     overflow-y: auto;
 }
+
+/* UPGRADE BANNER */
 
 .upgrade-banner {
     width: 100%;
@@ -175,6 +191,13 @@ aside {
     border-radius: 16px;
 }
 
+.upgrade-btn:hover {
+    font-weight: 600;
+    border: 2px solid #fff;
+}
+
+/* SELECT TYPE SECTION */
+
 .type-select {
     display: flex;
     justify-content: center;
@@ -186,11 +209,28 @@ aside {
     text-transform: uppercase;
     padding: 0 10px;
     color: rgb(108, 108, 108);
+    cursor: pointer;
+}
+
+.type-select .type::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    display: block;
+    margin-top: 4px;
+    transform: translateX(50%);
+}
+
+.underline:hover .type::after{
+    background: rgb(95, 255, 21);
 }
 
 .type-select .type:hover {
     color: #fff;
+    cursor: pointer;
 }
+
+/* ROW SECTION */
 
 .row {
     width: 100%;
@@ -218,6 +258,7 @@ aside {
 }
 
 .album-img {
+    position: relative;
     height: 96%;
 }
 
@@ -225,6 +266,32 @@ aside {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.album-img .play-btn {
+    width: 100%;
+    height: 99%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 60px;
+    display: none;
+}
+
+.play-btn i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.album-img:hover {
+    z-index: 1;
+}
+
+.album-img:hover .play-btn {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* FOOTER */
@@ -241,16 +308,40 @@ footer {
 footer .content {
     display: flex;
     list-style: none;
+    align-items: center;
+    cursor: pointer;
 }
+
+/* left side ALBUM PLAYED */
 
 .album-played .content li,
 .media-settings .content li {
     padding-right: 10px;
 }
 
-.media-settings .content li:last-child {
-    padding-right: 0;
+footer .content .album-img {
+    height: 6vh;
 }
+
+footer .content .album-name span:last-child {
+    display: block;
+    font-size: 10px;
+}
+
+.album-name .album-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.album-name span:hover {
+    text-decoration: underline;
+}
+
+.album-played li i:hover {
+    font-weight: 600;
+}
+
+/* center side MEDIA COMMAND */
 
 .media-command .content li {
     padding-right: 20px;
@@ -260,19 +351,6 @@ footer .content {
     padding-right: 0;
 }
 
-footer .content .album-img {
-    height: 5vh;
-}
-
-footer .content .album-name span {
-    display: block;
-    font-size: 10px;
-}
-
-.album-name .album-title {
-    font-weight: 600;
-}
-
 .media-command {
     flex-grow: 1;
     display: flex;
@@ -280,13 +358,20 @@ footer .content .album-name span {
     align-items: center;
 }
 
-.progress-section {
+.media-command li .big-icon:hover {
+    font-weight: 600;
+}
+
+/* PROGRESS BAR */
+
+.media-command .progress-section {
+    width: 50%;
     display: flex;
     align-items: center;
 }
 
 .progress-bar {
-    width: 300px;
+    flex-grow: 1;
     height: 4px;
     position: relative;
     background: #ccc;
@@ -294,7 +379,7 @@ footer .content .album-name span {
     margin: 0 10px;
 }
 
-.progress-bar::before {
+.media-command .progress-bar::before {
     content: "";
     display: block;
     width: 30%;
@@ -302,7 +387,7 @@ footer .content .album-name span {
     border-radius: 10px;
 }
 
-.progress-bar::after {
+.media-command .progress-bar::after {
     content: "";
     width: 9px;
     height: 9px;
@@ -321,5 +406,49 @@ footer .content .album-name span {
 }
 
 .progress-section:hover .progress-bar::before {
-    background: lime;
+    background: rgb(95, 255, 21);
+}
+
+/* right side MEDIA SETTINGS */
+
+.media-settings .content li:last-child {
+    padding-right: 0;
+}
+
+.media-settings {
+    display: flex;
+}
+
+.media-settings .progress-section {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.media-settings .progress-bar::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.media-settings .progress-bar::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 950px) {
+    
 }
