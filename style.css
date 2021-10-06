@@ -7,6 +7,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     color: #fff;
 }
 
@@ -143,11 +145,10 @@ aside {
 /* PRINCIPAL WINDOW */
 
 .principal-sct {
-    width: 85%;
-    height: 90vh;
+    width: 87%;
+    height: 92vh;
     padding: 6% 15px 20px;
     background:rgb(11, 14, 26);
-    border-top: 1px solid black;
     overflow-y: auto;
 }
 
@@ -213,7 +214,7 @@ aside {
 }
 
 .album-img {
-    height: 99%;
+    height: 96%;
 }
 
 .album-img img {
@@ -225,11 +226,45 @@ aside {
 /* FOOTER */
 
 footer {
-    width: 100%;
-    height: 10vh;
-    background-color: rgba(255, 70, 70, 0.555);
-    border-top: 1px solid black;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+footer .content {
+    display: flex;
+    list-style: none;
+}
+
+.album-played .content li,
+.media-settings .content li {
+    padding-right: 10px;
+}
+
+.media-settings .content li:last-child {
+    padding-right: 0;
+}
+
+.media-command .content li {
+    padding-right: 20px;
+}
+
+.media-command .content li:last-child {
+    padding-right: 0;
+}
+
+footer .content .album-img {
+    height: 5vh;
+}
+
+footer .content .album-name span {
+    display: block;
+    font-size: 10px;
+}
+
+.album-name .album-title {
+    font-weight: 600;
 }
