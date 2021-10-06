@@ -64,7 +64,7 @@ main {
 
 /* ASIDE NAV */
 aside {
-    width: 170px;
+    width: 320px;
     z-index: 1;
     padding: 10px 0;
     background: rgb(0, 0, 0);
@@ -130,23 +130,29 @@ aside {
     cursor: pointer;
 }
 
+.aside-footer {
+    margin: 0 10px;
+}
+
 .aside-content .profile {
+    height: 28px;
     font-size: 14px;
     font-weight: 700;
     border-top: 1px solid rgb(108, 108, 108);
     cursor: pointer;
 }
 
-.aside-footer {
-    margin: 0 10px;
+.aside-content .profile img {
+    height: 100%;
+    background-color: #333;
+    border-radius: 50%;
 }
-
 
 /* PRINCIPAL WINDOW */
 
 .principal-sct {
-    width: 87%;
-    height: 92vh;
+    flex-grow: 1;
+    height: 91vh;
     padding: 6% 15px 20px;
     background:rgb(11, 14, 26);
     overflow-y: auto;
@@ -188,11 +194,9 @@ aside {
 
 .row {
     width: 100%;
-    height: 35vh;
     display: flex;
-    align-items: center;
     padding: 20px 0;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .album {
@@ -226,7 +230,7 @@ aside {
 /* FOOTER */
 
 footer {
-    height: 8vh;
+    height: 9vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -267,4 +271,55 @@ footer .content .album-name span {
 
 .album-name .album-title {
     font-weight: 600;
+}
+
+.media-command {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-section {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 4px;
+    position: relative;
+    background: #ccc;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.progress-bar::before {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.progress-bar::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.progress-section:hover .progress-bar::after {
+    z-index: 1;
+}
+
+.progress-section:hover .progress-bar::before {
+    background: lime;
 }
