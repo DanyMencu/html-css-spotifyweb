@@ -62,9 +62,9 @@ main {
 
 /* ASIDE NAV */
 aside {
-    width: 15%;
+    width: 170px;
     z-index: 1;
-    padding: 10px 15px 10px 0;
+    padding: 10px 0;
     background: rgb(0, 0, 0);
     color: rgb(108, 108, 108);
 }
@@ -102,6 +102,7 @@ aside {
 .aside-content ul li:hover {
     border-left: 2px solid rgb(95, 255, 21);
     color: #fff;
+    font-weight: 600;
 }
 
 .main-menu li>img {
@@ -134,15 +135,20 @@ aside {
     cursor: pointer;
 }
 
+.aside-footer {
+    margin: 0 10px;
+}
+
 
 /* PRINCIPAL WINDOW */
 
 .principal-sct {
     width: 85%;
     height: 90vh;
+    padding: 6% 15px 20px;
     background:rgb(11, 14, 26);
     border-top: 1px solid black;
-    overflow-y: overlay;
+    overflow-y: auto;
 }
 
 .upgrade-banner {
@@ -160,7 +166,6 @@ aside {
     padding: 5px 20px;
     border: 1px solid #fff;
     border-radius: 16px;
-    margin-right: 20px;
 }
 
 .type-select {
@@ -168,7 +173,6 @@ aside {
     justify-content: center;
     flex-wrap: wrap;
     font-size: 12px;
-    padding-top: 6%;
 }
 
 .type-select .type {
@@ -186,16 +190,17 @@ aside {
     height: 35vh;
     display: flex;
     align-items: center;
-    padding: 20px 15px;
-    margin-bottom: 35px;
+    padding: 20px 0;
+    margin-bottom: 50px;
 }
 
 .album {
-    width: 16%;
+    width: calc(100% / 6 - 10px);
     height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-right: 10px;
 }
 
 .album h3 {
@@ -209,7 +214,6 @@ aside {
 
 .album-img {
     height: 99%;
-    padding-right: 10px;
 }
 
 .album-img img {
