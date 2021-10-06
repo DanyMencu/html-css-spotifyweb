@@ -15,11 +15,11 @@
     <!-- MAIN -->
     <main>
         <!-- ASIDE NAV -->
-        <!-- correggiere l'immagine di profilo e del download con l'SVG -->
         <aside>
             <!-- LOGO -->
             <div class="aside-logo ml-10px">
-                <img src="./img/logo.svg" alt="Spotify logo">
+                <img class="principal-img" src="./img/logo.svg" alt="Spotify logo">
+                <img class="secondary-img" src="./img/logo-small.svg" alt="Small Spotify logo">
             </div>
             <div class="aside-content">
                 <!-- MAIN MENU -->
@@ -226,14 +226,16 @@
     <footer>
         <!-- LEFT SIDE -->
         <div class="album-played">
-            <ul class="content">
-                <li class="album-img">
+            <div class="album-description">
+                <div class="album-img mr-10px">
                     <img src="./img/sinister.jpeg" alt="Sinister album">
-                </li>
-                <li class="album-name">
+                </div>
+                <div class="album-name mr-10px">
                     <span class="album-title">Sinister</span>
                     <span>Brano Name</span>
-                </li>
+                </div>
+            </div>
+            <ul class="content">
                 <li>
                     <i class="far fa-heart"></i>
                 </li>

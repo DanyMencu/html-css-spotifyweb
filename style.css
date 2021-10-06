@@ -65,6 +65,10 @@ body {
     margin-left: 10px;
 }
 
+.mr-10px { 
+    margin-right: 10px;
+}
+
 /* MAIN */
 main {
     display: flex;
@@ -72,24 +76,33 @@ main {
 
 /* ASIDE NAV */
 aside {
-    width: 320px;
-    z-index: 1;
+    width: 180px;
+    z-index: 2;
     padding: 10px 0;
     background: rgb(0, 0, 0);
     color: rgb(108, 108, 108);
 }
+
+/* ASIDE LOGO */
 
 .aside-logo {
     width: 65%;
     height: 10%;
 }
 
-.aside-logo img {
+.aside-logo .principal-img,
+.aside-logo .secondary-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     cursor: pointer;
 }
+
+.aside-logo .secondary-img {
+    display: none;
+}
+
+/* MAIN MENU */
 
 .aside-content {
     height: calc(100% - 10%);
@@ -120,6 +133,8 @@ aside {
     vertical-align: bottom;
 }
 
+/* ASIDE PLAYLIST */
+
 .aside-playlist {
     flex-grow: 1;
 }
@@ -133,6 +148,12 @@ aside {
     vertical-align: middle;
 }
 
+/* ASIDE FOOTER */
+
+.aside-footer {
+    margin: 0 10px;
+}
+
 .aside-content .app-installer {
     font-size: 10px;
     cursor: pointer;
@@ -140,10 +161,6 @@ aside {
 
 .aside-content .app-installer:hover {
     text-decoration: underline;
-}
-
-.aside-footer {
-    margin: 0 10px;
 }
 
 .aside-footer .profile {
@@ -165,7 +182,7 @@ aside {
 /* PRINCIPAL WINDOW */
 
 .principal-sct {
-    flex-grow: 1;
+    width: calc(100% - 180px);
     height: 91vh;
     padding: 6% 15px 20px;
     background:rgb(11, 14, 26);
@@ -182,6 +199,7 @@ aside {
     padding: 15px 3px 20px;
     background: rgba(0, 0, 0, 0.6);
     text-align: right;
+    z-index: 1;
 }
 
 .upgrade-btn {
@@ -285,10 +303,6 @@ aside {
     transform: translate(-50%, -50%);
 }
 
-.album-img:hover {
-    z-index: 1;
-}
-
 .album-img:hover .play-btn {
     display: block;
     background-color: rgba(0, 0, 0, 0.4);
@@ -314,16 +328,23 @@ footer .content {
 
 /* left side ALBUM PLAYED */
 
+.album-played,
+.album-description {
+    display: flex;
+    align-items: center;
+}
+
 .album-played .content li,
 .media-settings .content li {
     padding-right: 10px;
 }
 
-footer .content .album-img {
+
+.album-description .album-img {
     height: 6vh;
 }
 
-footer .content .album-name span:last-child {
+.album-description .album-name span:last-child {
     display: block;
     font-size: 10px;
 }
@@ -449,6 +470,95 @@ footer .content .album-name span:last-child {
 
 /* RESPONSIVE */
 
+/* FOR MONITOR UNDER 950PX */
+
 @media screen and (max-width: 950px) {
-    
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .album {
+        width: calc(100% / 4 - 10px);
+    }
 }
+
+ /* FOR SCREEN UNDER 600PX */
+
+ @media screen and (max-width: 600px) {
+.principal-sct {
+    padding-top: 10%;
+}
+
+    .album {
+        width: calc(100% / 2 - 10px);
+        margin-bottom: 10px;
+    }
+
+    .album-played .content {
+        flex-direction: column;
+    }
+
+    .media-command .progress-section {
+        width: 90%;
+    }
+    .media-settings .progress-section {
+        width: 70px;
+    }
+ }
+
+ /* FOR SCREEN UNDER 500PX */
+
+ @media screen and (max-width: 500px) {
+    aside {
+        width: 50px;
+    }
+
+    .principal-sct {
+        width: calc(100% - 50px);
+        padding-top: 14%;
+    }
+
+    .aside-logo .principal-img {
+        display: none;
+    }
+
+    .aside-logo .secondary-img {
+        display: block;
+    }
+
+    .aside-content {
+        align-items: center;
+    }
+
+    .aside-content span {
+        display: none;
+    }
+
+    .main-menu li>img {
+        width: 80%;
+    }
+
+    .main-menu {
+        flex-grow: 1;
+    }
+    .aside-playlist {
+        display: none;
+    }
+
+    .aside-content .app-installer {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .aside-footer .profile {
+        border: 0;
+        height: 40px;
+        margin-left: 5px;
+    }
+
+    .album-name {
+        display: none;
+    }
+
+ }
