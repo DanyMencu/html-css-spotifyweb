@@ -484,10 +484,10 @@ footer .content {
 
  /* FOR SCREEN UNDER 600PX */
 
- @media screen and (max-width: 600px) {
-.principal-sct {
-    padding-top: 10%;
-}
+@media screen and (max-width: 600px) {
+    .principal-sct {
+        padding-top: 10%;
+    }
 
     .album {
         width: calc(100% / 2 - 10px);
@@ -501,14 +501,15 @@ footer .content {
     .media-command .progress-section {
         width: 90%;
     }
+
     .media-settings .progress-section {
         width: 70px;
     }
- }
+}
 
  /* FOR SCREEN UNDER 500PX */
 
- @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     aside {
         width: 50px;
     }
@@ -561,4 +562,4 @@ footer .content {
         display: none;
     }
 
- }
+}
